@@ -155,8 +155,28 @@ let opt2 = document.getElementById('opt2');
 let opt3 = document.getElementById('opt3');
 let opt4 = document.getElementById('opt4');
 
-ques.innerHTML = question[index].question;
-opt1.innerText = question[index].option1;
-opt2.innerText = question[index].option2;
-opt3.innerText = question[index].option3;
-opt4.innerText = question[index].option4;
+
+
+function nextQuestion() {
+
+    if(index > question.length - 1){
+        console.log(`Question end`);
+    } else {
+        ques.innerText = question[index].question;
+        opt1.innerText = question[index].option1;
+        opt2.innerText = question[index].option2;
+        opt3.innerText = question[index].option3;
+        opt4.innerText = question[index].option4;
+        index++
+
+    }  
+
+}
+
+
+nextQuestion()
+
+function clicked() {
+    let btn = document.getElementById('btn');
+    btn.disabled = false;
+}
