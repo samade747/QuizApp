@@ -155,28 +155,46 @@ let opt2 = document.getElementById('opt2');
 let opt3 = document.getElementById('opt3');
 let opt4 = document.getElementById('opt4');
 
-let btn = document.getElementById('btn');
+var btn = document.getElementById('btn');
 
-let score = 0;
+var score = 0;
+
+
+// timer 
+var min = 1;
+var sec = 59
+var timer = document.getElementById(`timer`);
+var interval = setInterval(function(){
+    timer.innerHTML = `${min} : ${sec}`
+    sec--
+},1000)
+
+
+let result = document.getElementById('result')
+
+
+
 
 function nextQuestion() {
     let getOptions = document.getElementsByName('options');
      for(var i=0; i < getOptions.length; i++){
-        let selectedValue = getOptions[i].value;
-        let selectedQues = question[index - 1].question;
-        let selectedAns = question[index -1][`option${selectedValue}`];
-        let correctOption = question[index -1][`correctOption`];
-        if(selectedAns == correctOption){
+        if(getOptions[i].checked){
+        var selectedValue = getOptions[i].value;
+        var selectedQues = question[index - 1][`question`];
+        var selectedAns = question[index -1][`option${selectedValue}`];
+        var correctOption = question[index -1][correctOption];
+    }if(selectedAns == correctOption){
             score++
         }
+        getOptions[i].checked = false;
      }
-     getOptions[i].checked = false;
+     
      btn.disabled = true; 
 
 
 
     if(index > question.length - 1){
-        document.write(`your percentage is ${(score / question.length) * 100}`);
+        result.innerText = (`your percentage is ${(score / question.length) * 100}`);
     } else {
         ques.innerText = question[index].question;
         opt1.innerText = question[index].option1;
@@ -188,6 +206,8 @@ function nextQuestion() {
     }  
 
 }
+
+result.innerText = (`your percentage is ${(score / question.length) * 100}`);
 
 
 nextQuestion()
