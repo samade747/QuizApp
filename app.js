@@ -1,4 +1,4 @@
-let js = [
+let question = [
     {
         question: 'Inside which HTML element do we put the JavaScript?',
         option1: '<scprit>',
@@ -146,3 +146,17 @@ let js = [
         correctOption: 'let carName;'
     }
 ]
+
+let index = 0;
+
+let ques = document.getElementById('ques');
+let opt1 = document.getElementById('opt1');
+let opt2 = document.getElementById('opt2');
+let opt3 = document.getElementById('opt3');
+let opt4 = document.getElementById('opt4');
+
+ques.innerHTML = question[index].question;
+opt1.innerText = question[index].option1;
+opt2.innerText = question[index].option2;
+opt3.innerText = question[index].option3;
+opt4.innerText = question[index].option4;
