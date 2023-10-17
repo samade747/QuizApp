@@ -155,12 +155,28 @@ let opt2 = document.getElementById('opt2');
 let opt3 = document.getElementById('opt3');
 let opt4 = document.getElementById('opt4');
 
+let btn = document.getElementById('btn');
 
+let score = 0;
 
 function nextQuestion() {
+    let getOptions = document.getElementsByName('options');
+     for(var i=0; i<getOptions.length; i++){
+        let selectedValue = getOptions[i].value;
+        let selectedQues = question[index - 1][question]; 
+        let selectedAns = question[index -1][`option${selectedValue}`];
+        let correctOption = question[index -1][`correctOption`]
+        if(selectedAns == correctOption){
+            score++
+        }
+     }
+     getOptions[i].checked = false;
+     btn.disabled = true; 
+
+
 
     if(index > question.length - 1){
-        console.log(`Question end`);
+        document.write(`your percentage is ${(score / question.length) * 100}`);
     } else {
         ques.innerText = question[index].question;
         opt1.innerText = question[index].option1;
@@ -177,6 +193,6 @@ function nextQuestion() {
 nextQuestion()
 
 function clicked() {
-    let btn = document.getElementById('btn');
+    
     btn.disabled = false;
 }
