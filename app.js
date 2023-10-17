@@ -161,11 +161,11 @@ let score = 0;
 
 function nextQuestion() {
     let getOptions = document.getElementsByName('options');
-     for(var i=0; i<getOptions.length; i++){
+     for(var i=0; i < getOptions.length; i++){
         let selectedValue = getOptions[i].value;
-        let selectedQues = question[index - 1][question]; 
+        let selectedQues = question[index - 1].question;
         let selectedAns = question[index -1][`option${selectedValue}`];
-        let correctOption = question[index -1][`correctOption`]
+        let correctOption = question[index -1][`correctOption`];
         if(selectedAns == correctOption){
             score++
         }
