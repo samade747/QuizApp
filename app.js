@@ -194,7 +194,9 @@ function nextQuestion() {
 
 
     if(index > question.length - 1){
+        ques.innerText = (`your percentage is ${(score / question.length) * 100}`);
         result.innerText = (`your percentage is ${(score / question.length) * 100}`);
+        
     } else {
         ques.innerText = question[index].question;
         opt1.innerText = question[index].option1;
