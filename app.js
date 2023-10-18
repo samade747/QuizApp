@@ -196,6 +196,8 @@ function nextQuestion() {
     if(index > question.length - 1){
         ques.innerText = (`your percentage is ${(score / question.length) * 100}`);
         result.innerText = (`your percentage is ${(score / question.length) * 100}`);
+        $('#opt1, #opt2, #opt2, #opt4').hide();
+        
         
     } else {
         ques.innerText = question[index].question;
