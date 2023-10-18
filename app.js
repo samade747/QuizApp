@@ -18,8 +18,8 @@ let question = [
         question: 'What is the correct syntax for referring to an external script called "xxx.js"?',
         option1: '<scripr href="xxx.js">',
         option2: '<scripr name="xxx.js">',
-        option3: '<scripr src="xxx.js">',
-        correctOption: '<scripr src="xxx.js">'
+        option3: '<script src="xxx.js">',
+        correctOption: '<script src="xxx.js">'
     },
     {
         question: 'The external JavaScript file must contain the <script> tag.',
