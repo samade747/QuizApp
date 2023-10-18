@@ -162,7 +162,7 @@ var score = 0;
 
 // timer 
 var min = 1;
-var sec = 59
+var sec = 59;
 var timer = document.getElementById(`timer`);
 var interval = setInterval(function(){
     timer.innerHTML = `${min} : ${sec}`
@@ -196,7 +196,7 @@ function nextQuestion() {
     if(index > question.length - 1){
         ques.innerText = (`your percentage is ${(score / question.length) * 100}`);
         result.innerText = (`your percentage is ${(score / question.length) * 100}`);
-        $('#opt1, #opt2, #opt2, #opt4').hide();
+        $('#opt1, #opt2, #opt3, #opt4').hide();
         
         
     } else {
