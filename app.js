@@ -196,7 +196,7 @@ function nextQuestion() {
 
         // jo answer ham select kar rhe hain woh question ke array mai -1 index number, se option${selectedValue}, ko selectedAns ke variable mai save krengai 
         var selectedAns = question[index -1][`option${selectedValue}`];
-        
+
 
         var correctOption = question[index -1][correctOption];
     }if(selectedAns == correctOption){
@@ -210,7 +210,7 @@ function nextQuestion() {
 
 
     if(index > question.length - 1){
-        ques.innerText = (`your percentage is ${(score / question.length) * 100}`);
+        ques.innerText = (`${(score / question.length) * 100}`);
         result.innerText = (`your percentage is ${(score / question.length) * 100}`);
         $('#opt1, #opt2, #opt3, #opt4').hide();
         
