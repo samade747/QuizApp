@@ -181,14 +181,23 @@ function nextQuestion() {
 
     // creating a variable of let & getting data of input options by elements Name in html
     let getOptions = document.getElementsByName('options');
+
     // running a for loop var i = 0; i ki value length; i++ ;
      for(var i=0; i < getOptions.length; i++){
-        // if getoptions i ki value checked hoto 
+
+        // if getoptions i ki value agar checked hoto 
         if(getOptions[i].checked){
-        // 
+
+        // jo value select hogi uski value ko variable mai save kareingai =getOptions[i].value yeh variable selectedvalue mai save hogi 
         var selectedValue = getOptions[i].value;
+
+        // ji question ka ham answer de rhe hain woh question hamneh save karna hai selectedQues ke variable mai, upar array question[index-1][`question`] 
         var selectedQues = question[index - 1][`question`];
+
+        // jo answer ham select kar rhe hain woh question ke array mai -1 index number, se option${selectedValue}, ko selectedAns ke variable mai save krengai 
         var selectedAns = question[index -1][`option${selectedValue}`];
+        
+
         var correctOption = question[index -1][correctOption];
     }if(selectedAns == correctOption){
             score++
