@@ -146,17 +146,19 @@ let question = [
         correctOption: 'let carName;'
     }
 ]
-
+// index number is 0, as we run the code with index number
 let index = 0;
 
+// saving in variable & getting data by id in html 
 let ques = document.getElementById('ques');
 let opt1 = document.getElementById('opt1');
 let opt2 = document.getElementById('opt2');
 let opt3 = document.getElementById('opt3');
 let opt4 = document.getElementById('opt4');
-
+// saving button & getting data by id in html
 var btn = document.getElementById('btn');
 
+//for score we set 0 its will later ++ 
 var score = 0;
 
 
@@ -176,9 +178,14 @@ let result = document.getElementById('result')
 
 
 function nextQuestion() {
+
+    // creating a variable of let & getting data of input options by elements Name in html
     let getOptions = document.getElementsByName('options');
+    // running a for loop var i = 0; i ki value length; i++ ;
      for(var i=0; i < getOptions.length; i++){
+        // if getoptions i ki value checked hoto 
         if(getOptions[i].checked){
+        // 
         var selectedValue = getOptions[i].value;
         var selectedQues = question[index - 1][`question`];
         var selectedAns = question[index -1][`option${selectedValue}`];
